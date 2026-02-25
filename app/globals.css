@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;900&family=Barlow+Condensed:wght@700;900&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+  --lime: #c6f135;
+  --lime-dark: #a8d820;
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #181818;
+  --card: #141414;
+  --border: #222;
+  --text: #ffffff;
+  --muted: #8a8a8a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
