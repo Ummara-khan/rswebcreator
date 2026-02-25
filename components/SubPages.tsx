@@ -13,6 +13,12 @@ const pageData = {
       { name: "Minimalist Logo", desc: "Clean, versatile logos that work perfectly at any size — from business cards to billboards." },
     ]
   },
+
+
+
+
+
+
   website: {
     tag: "Our Service", title: "Web & App", titleHi: "Development",
     desc: "Building sleek, high-performing websites and apps that deliver seamless user experiences and real-world results for your business.",
@@ -67,7 +73,7 @@ function SubPage({ slug }: { slug: keyof typeof pageData }) {
   const d = pageData[slug];
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main>
         <div style={{ minHeight: "50vh", display: "flex", alignItems: "center", padding: "8rem 4rem 4rem", background: "linear-gradient(135deg, #050505 0%, #0d1a05 100%)", position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", right: "-10%", top: "-20%", width: "60%", height: "140%", background: "radial-gradient(ellipse, rgba(120,200,0,0.07) 0%, transparent 70%)" }} />
