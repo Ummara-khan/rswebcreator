@@ -6,7 +6,7 @@ import { About, Services, Portfolio, Testimonials, Brands, CTA, WhatsApp } from 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main>
         <Hero />
       </main>
