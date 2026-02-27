@@ -2,79 +2,106 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#050505", borderTop: "1px solid var(--border)", padding: "4rem" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1.5fr", gap: "3rem", marginBottom: "3rem" }}
+    <footer style={{ background: "#111", color: "#fff", padding: "4rem 2rem", borderTop: "1px solid #333" }}>
+      <div style={{ 
+        display: "grid", 
+        gridTemplateColumns: "1.5fr 2fr", // 2 Column Layout
+        gap: "3rem", 
+        marginBottom: "3rem",
+        maxWidth: "1200px",
+        margin: "0 auto 3rem auto"
+      }}
         className="footer-grid">
+        
+        {/* Left Side: Logo & Address */}
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
             <div style={{
-              width: 44, height: 44, background: "var(--lime)",
+              width: 40, height: 40, background: "#d4ff00",
               clipPath: "polygon(0 0, 60% 0, 100% 40%, 100% 100%, 40% 100%, 0 60%)",
               display: "flex", alignItems: "center", justifyContent: "center",
-              fontWeight: 900, color: "#000"
+              fontWeight: 900, color: "#000", fontSize: "1.2rem"
             }}>RS</div>
-            <div style={{ fontFamily: "Barlow, sans-serif", fontWeight: 700, lineHeight: 1.1 }}>
-              web<br /><span style={{ color: "var(--lime)" }}>creator</span>
+            <div style={{ fontFamily: "Arial, sans-serif", fontWeight: 700, lineHeight: 1.1, fontSize: "1.2rem" }}>
+              web<br /><span style={{ color: "#d4ff00" }}>creator</span>
             </div>
           </div>
-          <p style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.7, marginBottom: "1.5rem", maxWidth: 280 }}>
-            Transforming ideas into impactful digital experiences. From cutting-edge websites to bold brand identities.
-          </p>
-          <div style={{ display: "flex", gap: "0.75rem" }}>
-            {["f", "in", "ig"].map(s => (
-              <a key={s} href="#" style={{
-                width: 36, height: 36, borderRadius: "50%", border: "1.5px solid var(--border)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "0.8rem", color: "var(--muted)"
-              }}>{s}</a>
-            ))}
+          
+          <div style={{ fontSize: "0.85rem", color: "#b3b3b3", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+            <p style={{marginBottom: "0.5rem"}}>📞 (832) 981-5302</p>
+            <p style={{marginBottom: "0.5rem"}}>✉️ info@rswebcreators.com</p>
+            <p style={{marginBottom: "0.5rem", lineHeight: 1.5 }}>
+              📍 10301 Northwest Freeway Suite 311, <br/>Houston Texas 77092 United States
+            </p>
+          </div>
+          
+          {/* Email Subscription */}
+          <div style={{ display: "flex", maxWidth: "350px" }}>
+            <input type="email" placeholder="Your Email" style={{
+              flex: 1, background: "#1a1a1a", border: "1px solid #333",
+              borderRight: "none", borderRadius: "4px 0 0 4px",
+              padding: "0.75rem", color: "#fff", outline: "none"
+            }} />
+            <button style={{
+              background: "#d4ff00", color: "#000", border: "none",
+              borderRadius: "0 4px 4px 0", padding: "0.75rem 1.25rem",
+              fontWeight: 700, fontSize: "0.85rem", cursor: "pointer"
+            }}>Subscribe ►</button>
           </div>
         </div>
 
-        <div>
-          <h4 style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: "1.25rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>Useful Links</h4>
-          <ul style={{ listStyle: "none" }}>
-            {[["About Us", "/"], ["Contact Us", "/contact"], ["Privacy Policy", "/"], ["Terms & Conditions", "/"], ["Refund Policy", "/"]].map(([l, h]) => (
-              <li key={l} style={{ marginBottom: "0.6rem" }}>
-                <Link href={h} style={{ fontSize: "0.85rem", color: "var(--muted)" }}>{l}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Right Side: Links Sections */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+          {/* Useful Links */}
+          <div>
+            <h4 style={{ fontWeight: 700, fontSize: "1rem", marginBottom: "1.5rem", color: "#fff" }}>Useful Links</h4>
+            <ul style={{ listStyle: "none", padding: 0 }}>
+              {[["About Us", "/"], ["Contact Us", "/contact"], ["Privacy Policy", "/"], ["Terms & Conditions", "/"], ["Refund Policy", "/"]].map(([l, h]) => (
+                <li key={l} style={{ marginBottom: "0.8rem" }}>
+                  <Link href={h} style={{ fontSize: "0.85rem", color: "#b3b3b3", textDecoration: "none" }}>{l}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div>
-          <h4 style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: "1.25rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>Services</h4>
-          <ul style={{ listStyle: "none" }}>
-            {[["Logo Design", "/logo"], ["Website", "/website"], ["Copywriting", "/copywriting"], ["Animations", "/animations"], ["Marketing", "/marketing"]].map(([l, h]) => (
-              <li key={l} style={{ marginBottom: "0.6rem" }}>
-                <Link href={h} style={{ fontSize: "0.85rem", color: "var(--muted)" }}>{l}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: "1.25rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>Contact</h4>
-          <p style={{ fontSize: "0.82rem", color: "var(--muted)", marginBottom: "0.75rem" }}>📞 (832) 981-5302</p>
-          <p style={{ fontSize: "0.82rem", color: "var(--muted)", marginBottom: "0.75rem" }}>✉️ info@rswebcreator.com</p>
-          <p style={{ fontSize: "0.82rem", color: "var(--muted)", marginBottom: "1rem", lineHeight: 1.5 }}>📍 10301 Northwest Freeway Suite 311, Houston Texas 77092</p>
-          <div style={{ display: "flex" }}>
-            <input type="email" placeholder="Your email" style={{
-              flex: 1, background: "var(--bg3)", border: "1px solid var(--border)",
-              borderRight: "none", borderRadius: "6px 0 0 6px",
-              padding: "0.6rem 1rem", color: "var(--text)", fontSize: "0.82rem", outline: "none"
-            }} />
-            <button style={{
-              background: "var(--lime)", color: "#000", border: "none",
-              borderRadius: "0 6px 6px 0", padding: "0.6rem 1rem",
-              fontWeight: 700, fontSize: "0.75rem", cursor: "pointer"
-            }}>Subscribe ►</button>
+          {/* Services */}
+          <div>
+            <h4 style={{ fontWeight: 700, fontSize: "1rem", marginBottom: "1.5rem", color: "#fff" }}>Services</h4>
+            <ul style={{ listStyle: "none", padding: 0 }}>
+              {[["Logo", "/logo"], ["Website", "/website"], ["Copywriting", "/copywriting"], ["Animations", "/animations"], ["Marketing", "/marketing"]].map(([l, h]) => (
+                <li key={l} style={{ marginBottom: "0.8rem" }}>
+                  <Link href={h} style={{ fontSize: "0.85rem", color: "#b3b3b3", textDecoration: "none" }}>{l}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
 
-      <div style={{ borderTop: "1px solid var(--border)", paddingTop: "1.5rem", textAlign: "center", fontSize: "0.78rem", color: "var(--muted)" }}>
-        Copyright 2025 © RS Web Creator. All Rights Reserved.
+      {/* Bottom Bar: Social & Copyright */}
+      <div style={{ 
+        borderTop: "1px solid #333", 
+        paddingTop: "1.5rem", 
+        display: "flex", 
+        justifyContent: "space-between", 
+        alignItems: "center",
+        maxWidth: "1200px",
+        margin: "0 auto",
+        fontSize: "0.8rem", 
+        color: "#b3b3b3"
+      }}>
+        <div style={{ display: "flex", gap: "1rem" }}>
+          {["f", "ig", "in"].map(s => (
+            <a key={s} href="#" style={{
+              width: 32, height: 32, borderRadius: "50%", border: "1px solid #444",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              color: "#fff", textDecoration: "none"
+            }}>{s}</a>
+          ))}
+        </div>
+        <div>
+          Copyright 2025 © All Rights Reserved
+        </div>
       </div>
 
       <style>{`
